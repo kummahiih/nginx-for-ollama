@@ -16,7 +16,7 @@ $sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl
 $sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ```
 
-Create the auth header file and default hello index.html for debugging:
+Create the encrypted auth header file and default debugging hello index.html:
 
 ```
 $sudo mkdir -p /etc/nginx/secrets/
@@ -25,6 +25,7 @@ $sudo chmod 600 /etc/nginx/secrets/ollama_token.conf
 $sudo sh -c "python3 api-key.py > /etc/nginx/secrets/ollama_token.conf"
 $sudo sh -c "echo hello > /var/www/html/index.html"
 ```
+
 
 Replace the configuration files:
 
