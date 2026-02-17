@@ -44,3 +44,15 @@ $ curl -k -v https://localhost/ -H "$HEADER"
 ```
 
 should say something like 'hello'
+
+The Ollama then should be accessible like this from the host terminal:
+
+```
+$ curl -k -v https://localhost/ollama/api/tags -H "$HEADER"
+```
+
+and line this from a docker container:
+
+```
+$ curl -k -v https://172.17.0.1:443/ollama/api/tags -H "$HEADER"
+```
